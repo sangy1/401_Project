@@ -1,81 +1,84 @@
 {
     "Secure Coding": [
         {
-            "question": "What is a buffer overflow?1",
-            "options": [
-                "When a program tries to store more data in a buffer than it can hold", 
-                "When a program crashes because of a stack overflow", 
-                "When a program's encryption is broken", 
-                "When a program's memory usage exceeds a certain limit"],
+            "question": "What is a buffer overflow?",
+            "options": ["When a program tries to store more data in a buffer than it can hold", 
+            "When a program crashes because of a stack overflow", 
+            "When a program's encryption is broken", 
+            "When a program's memory usage exceeds a certain limit"],
             "answer": "When a program tries to store more data in a buffer than it can hold",
             "difficulty": "easy"
         },
         {
             "question": "What is the term for an undesirable situation that occurs when a device or system attempts to perform two or more operations at the same time, but because of the nature of the device or system, the operations must be done in the proper sequence to be done correctly?",
-            "options": [
-                "Buffer overflow", 
-                "Race condition", 
-                "Multithread application", 
-                "Multiple sequence"],
+            "options": ["Buffer overflow", 
+            "Race condition", 
+            "Multithread application", 
+            "Multiple sequence"],
             "answer": "Race condition",
             "difficulty": "medium"
         },
         {
-            "question": "What is a buffer overflow?3",
-            "options": [
-                "When a program tries to store more data in a buffer than it can hold", 
-                "When a program crashes because of a stack overflow", 
-                "When a program's encryption is broken", 
-                "When a program's memory usage exceeds a certain limit"],
-            "answer": "When a program tries to store more data in a buffer than it can hold",
+            "question": "How many times will this function run: for (int i = 1; i < 5; ++i) { ... }",
+            "options": ["3", "4", "5", "6"],
+            "answer": "4",
             "difficulty": "hard"
         }
     ],
     "Vulnerability Discovery": [
         {
             "question": "What is the term for identifying and prioritizing security issues in real time?",
-            "options": ["Vulnerability Discovery", "Vulnerability Identifier", "Real time discovery", "Security analysis"],
+            "options": ["Vulnerability Discovery", 
+            "Vulnerability Identifier", 
+            "Real time discovery", 
+            "Security analysis"],
             "answer": "Vulnerability Discovery",
             "difficulty": "easy"
         },
         {
             "question": "What is a pro of doing source code review?",
-            "options": ["Doesn't require expertise", "Source code is also the production code", "It can be done fast and with full completeness", "Will detect run time issues"],
+            "options": ["Doesn't require expertise", 
+            "Source code is also the production code", 
+            "It can be done fast and with full completeness", 
+            "Will detect run time issues"],
             "answer": "It can be done fast and with full completeness",
             "difficulty": "medium"
         },
         {
             "question": "Which answer is not one of the four commonly used vulnerability discovery strategy used in software projects?",
-            "options": ["Configuration", "Malicious payload construction", "Diagnostics", "Pernicious execution"],
+            "options": ["Configuration", 
+            "Malicious payload construction", 
+            "Diagnostics", 
+            "Pernicious execution"],
             "answer": "Configuration",
             "difficulty": "hard"
         }
     ],
     "Fuzzing": [
         {
-            "question": "What is not a benefit of using fuzzing/fuzz testing?",
-            "options": ["It provides a good overall picture of quality of the system", 
-                        "Has low overhead for resources", 
-                        "Will detect bugs that will not be detected through conventional methods or manual audits", 
-                        "Crashes are always easy to analyze"],
-            "answer": "Crashes are always easy to analyze",
+            "question": "What is the goal of fuzzing?",
+            "options": ["To crash the program being tested", 
+            "To identify vulnerabilities in the program being tested", 
+            "To speed up the testing process", 
+            "To optimize the program being tested"],
+            "answer": "To identify vulnerabilities in the program being tested",
             "difficulty": "easy"
         },
         {
-            "question": "What bug does fuzzing not find?",
+           "question": "What bug does fuzzing not find?",
             "options": ["Buffer overflow", 
-                        "Missing error check", 
-                        "Rogue numbers", 
-                        "System crashes"],
+            "Missing error check", 
+            "Rogue numbers", 
+            "System crashes"],
             "answer": "System crashes",
             "difficulty": "medium"
         },
         {
             "question": "What type of fuzzing does this definition mean: technique used to discover and exploit web applications' vulnerabilities by examining their behavior at run-time without the need for the application's source code?",
             "options": ["Dumb fuzzing", 
-                        "Black box fuzzing", 
-                        "White box fuzzing", 
-                        "Smart fuzzing"],
+            "Black box fuzzing", 
+            "White box fuzzing", 
+            "Smart fuzzing"],
             "answer": "Black box fuzzing",
             "difficulty": "hard"
         }
@@ -83,25 +86,79 @@
     "Penetration Testing": [
         {
             "question": "What is the difference between a white-box and a black-box penetration test?",
-            "options": ["The level of access provided to the tester", "The number of testers involved", "The types of tools used in the test", "The length of the testing period"],
+            "options": ["The level of access provided to the tester", 
+            "The number of testers involved", 
+            "The types of tools used in the test", 
+            "The length of the testing period"],
             "answer": "The level of access provided to the tester",
             "difficulty": "easy"
+        },
+        {
+            "question": "Which of the following best describes penetration testing in cybersecurity?",
+            "options": ["A type of security control that prevents unauthorized access to a system", 
+            "A process of identifying, exploiting, and reporting vulnerabilities in a system", 
+            "A method of protecting a system against malware and viruses", 
+            "An encryption technique used to secure data in transit"],
+            "answer": "A process of identifying, exploiting, and reporting vulnerabilities in a system",
+            "difficulty": "medium"
+        },
+        {
+            "question": "What type of hacker would attack the white house and then publicize it over social media?",
+            "options": ["A black hat hacker", "A script kiddie", "An insider threat", "A hacktivist"],
+            "answer": "A hacktivist",
+            "difficulty": "hard"
         }
     ],
     "Ethical Hacking": [
         {
-            "question": "What is the difference between a hacker and a cracker?",
-            "options": ["A hacker is someone who uses their skills for good, while a cracker uses their skills for malicious purposes", "A hacker is someone who breaks into computer systems, while a cracker is someone who breaks into safes", "A hacker is someone who is skilled in programming languages, while a cracker is someone who is skilled in social engineering", "There is no difference"],
-            "answer": "A hacker is someone who uses their skills for good, while a cracker uses their skills for malicious purposes",
+            "question": "If you have been contracted to perform an attack against a target system, you are what typeof hacker?",
+            "options": ["White hat", "Gray hat", "Black hat", "Red hat"],
+            "answer": "White hat",
             "difficulty": "easy"
+        },
+        {
+            "question": "What separates a suicide hacker from other attackers?",
+            "options": ["A disregard for the law", 
+            "A desire to be helpful", 
+            "The intent to reform", 
+            "A lack of fear of being caught"],
+            "answer": "A lack of fear of being caught",
+            "difficulty": "medium"
+        },
+        {
+            "question": "How is black box testing performed?",
+            "options": ["With no knowledge", "With full knowledge", "With partial knowledge", "By a black hat"],
+            "answer": "With no knowledge",
+            "difficulty": "hard"
         }
     ],
     "Exploits/Attacks": [
         {
             "question": "What is a zero-day exploit?",
-            "options": ["An exploit that has never been seen before", "An exploit that is highly effective", "An exploit that targets multiple systems at once", "An exploit that is difficult to detect"],
+            "options": ["An exploit that has never been seen before", 
+            "An exploit that is highly effective", 
+            "An exploit that targets multiple systems at once", 
+            "An exploit that is difficult to detect"],
             "answer": "An exploit that has never been seen before",
             "difficulty": "easy"
+        },
+        {
+            "question": "What is a phishing attack?",
+            "options": ["An attack that attempts to gain unauthorized access to a system or network", 
+            "An attack that floods a network with traffic to make it unavailable to users", 
+            "An attack that sends fake messages/emails tricking recipients into sharing sensitive info", 
+            "An attack that uses software vulnerabilities to gain access to a system or network"],
+            "answer": "An attack that sends fake messages/emails tricking recipients into sharing sensitive info",
+            "difficulty": "medium"
+        },
+        {
+            "question": "What is a man-in-the-middle attack?",
+            "options": ["An attack that intercepts and alters network traffic between two parties covertly", 
+            "An attack that floods a network with traffic to make it unavailable to users", 
+            "An attack that steals sensitive data by gaining access to a system or network", 
+            "An attack using social engineering to trick users into revealing their login credentials"],
+            "answer": "An attack that intercepts and alters network traffic between two parties covertly",
+            "difficulty": "hard"
         }
     ],
     "Countermeasures": [
@@ -110,24 +167,43 @@
             "options": ["Input validation and sanitization", "Cross-site scripting protection", "Encryption of sensitive data", "Throttling of requests"],
             "answer": "Input validation and sanitization",
             "difficulty": "easy"
+        },
+        {
+            "question": "Identify the security policy that doesn't keep any restrictions on the usage of system resources",
+            "options": ["promiscuous policy", "prudent policy", "paranoid policy", "permissive policy"],
+            "answer": "promiscuous policy",
+            "difficulty": "medium"
+        },
+        {
+            "question": "Which of the following backup strategies provides daily status of the backup situation, such as successful, unsuccessful, not run, out of space, etc.?",
+            "options": ["security", "guarantee", "data availability", "notifications"],
+            "answer": "data availability",
+            "difficulty": "hard"
         }
     ],
     "Internet Infrastructure": [
         {
-            "question": "What is a DDoS attack?",
-            "options": ["An attack that involves stealing user data", "An attack that involves brute-forcing login credentials", "An attack that involves overwhelming a system with traffic", "An attack that involves exploiting a vulnerability in a system"],
-            "answer": "An attack that involves overwhelming a system with traffic",
+            "question": "What is the data plane responsible for in a network?",
+            "options": ["Deciding how data should be managed on the network", 
+            "Responsible for moving the data across the network", 
+            "Holds data of users in network", 
+            "There is no such term in a network setting"],
+            "answer": "Responsible for moving the data across the network",
             "difficulty": "easy"
         },
         {
-            "question": "Which option is not a difference between interdomain routing and intradomain routing?",
-            "options": [
-                "Interdomain routing wants control over how its traffic is routed while intradomain routing doesn't care",
-                "Interdomain routing focuses on policy over performance unlike intradomain routing",
-                "Interdomain routing can work within and between domains while intradomain routing only works within domains",
-                "Intradomain routing only knows routers within and between their domain while interdomain routing only knows routers within its domain."
-                    ],
-            "answer": "Intradomain routing only knows routers within and between their domain while interdomain routing only knows routers within its domain.",
+            "question": "What is not a major consideration for a \"good\" routing protocol?",
+            "options": ["cost", "speed", "congestion", "security"],
+            "answer": "security",
+            "difficulty": "medium"
+        },
+        {
+            "question": "What type of routing manages traffic within a single domain?",
+            "options": ["Internal", 
+            "Inter-domain", 
+            "Intercontinental", 
+            "Intra-domain"],
+            "answer": "Intra-domain",
             "difficulty": "hard"
         }
     ],
@@ -137,6 +213,24 @@
             "options": ["Disk imaging", "File carving", "RAM dumping", "Packet capturing"],
             "answer": "RAM dumping",
             "difficulty": "easy"
+        },
+         {
+            "question": "What is malware analysis in the context of cybersecurity forensics?",
+            "options": ["The process of determining the root cause of a cyberattack", 
+            "The process of identifying and analyzing malicious software", 
+            "The process of securing a network from future attacks", 
+            "The process of recovering data that has been lost or stolen"],
+            "answer": "The process of identifying and analyzing malicious software",
+            "difficulty": "medium"
+        },
+        {
+            "question": "What is memory forensics in the context of cybersecurity forensics?",
+            "options": ["The process of analyzing data stored in a computer's volatile memory", 
+            "The process of analyzing data stored on a hard drive", 
+            "The process of analyzing network traffic logs", 
+            "The process of analyzing email headers"],
+            "answer": "The process of analyzing data stored in a computer's volatile memory",
+            "difficulty": "hard"
         }
     ],
     "ML for Cybersecurity": [
@@ -145,6 +239,21 @@
             "options": ["Supervised learning", "Unsupervised learning", "Reinforcement learning", "Deep learning"],
             "answer": "Supervised learning",
             "difficulty": "easy"
+        },
+         {
+            "question": "Which type of machine learning algorithm is commonly used in cybersecurity?",
+            "options": ["K-nearest neighbors (KNN)", "Decision trees", "Decision branch", "FIFO"],
+            "answer": "Decision trees",
+            "difficulty": "medium"
+        },
+        {
+            "question": "How can machine learning be used to enhance the security of web applications?",
+            "options": ["By analyzing user behavior and detecting abnormal activities or anomalies", 
+            "By encrypting data transmitted between the web application and users' browsers", 
+            "By implementing strong password policies and multi-factor authentication", 
+            "By monitoring network traffic and detecting potential threats in real-time"],
+            "answer": "By analyzing user behavior and detecting abnormal activities or anomalies",
+            "difficulty": "hard"
         }
     ]
 }

@@ -12,24 +12,23 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Are You Smarter Than a Cyberesecurity Student?")
 
 # Colors
-WHITE = (255,255,255)
-BLACK = (0,0,0)
-GRAY = (128,128,128)
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+GRAY = (128, 128, 128)
 BLUE = (0, 128, 255)
 GREEN = (105, 245, 66)
 ORANGE = (245, 160, 24)
 RED = (240, 26, 14)
 # Define global variables
-difficulty = "" 
+difficulty = ""
 button_rect_easy = pygame.Rect(screen_width // 3 - 100, screen_height // 2, 200, 200)
 button_rect_medium = pygame.Rect(screen_width // 2 - 100, screen_height // 2, 200, 200)
 button_rect_hard = pygame.Rect(screen_width // 1.5 - 100, screen_height // 2, 200, 200)
-play_again_rect = pygame.Rect(screen_width // 2 - 50 , screen_height // 2, 100, 100)
+play_again_rect = pygame.Rect(screen_width // 2 - 50, screen_height // 2, 100, 100)
 button_y = int(screen_height / 3)
 option_centers = []
 option_rects = []
 option_texts = []
-
 
 selected_topic = ""
 current_screen = "start"
@@ -37,21 +36,27 @@ option_buttons = []
 correct_answer = ""
 num_correct = 00
 
-
-
-
-    
 topics = [
-    {"rect": pygame.Rect(screen_width // 3 - 50, button_y + (screen_height // 10 * 0), 100, 100), "name": "Secure Coding", "answered_correctly": False},
-    {"rect": pygame.Rect(screen_width // 3 - 50, button_y + (screen_height // 10 * 1), 100, 100), "name": "Vulnerability Discovery", "answered_correctly": False},
-    {"rect": pygame.Rect(screen_width // 3 - 50, button_y + (screen_height // 10 * 2), 100, 100), "name": "Fuzzing", "answered_correctly": False},
-    {"rect": pygame.Rect(screen_width // 3 - 50, button_y + (screen_height // 10 * 3), 100, 100), "name": "Penetration Testing", "answered_correctly": False},
-    {"rect": pygame.Rect(screen_width // 3 - 50, button_y + (screen_height // 10 * 4), 100, 100), "name": "Ethical Hacking", "answered_correctly": False},
-    {"rect": pygame.Rect(screen_width // 1.5 - 50, button_y + (screen_height // 10 * 0), 100, 100), "name": "Exploits/Attacks", "answered_correctly": False},
-    {"rect": pygame.Rect(screen_width // 1.5 - 50, button_y + (screen_height // 10 * 1), 100, 100), "name": "Countermeasures", "answered_correctly": False},
-    {"rect": pygame.Rect(screen_width // 1.5 - 50, button_y + (screen_height // 10 * 2), 100, 100), "name": "Internet Infrastructure", "answered_correctly": False},
-    {"rect": pygame.Rect(screen_width // 1.5 - 50, button_y + (screen_height // 10 * 3), 100, 100), "name": "Forensic Analysis", "answered_correctly": False},
-    {"rect": pygame.Rect(screen_width // 1.5 - 50, button_y + (screen_height // 10 * 4), 100, 100), "name": "ML for Cybersecurity", "answered_correctly": False}
+    {"rect": pygame.Rect(screen_width // 3 - 50, button_y + (screen_height // 10 * 0), 100, 100),
+     "name": "Secure Coding", "answered_correctly": False},
+    {"rect": pygame.Rect(screen_width // 3 - 50, button_y + (screen_height // 10 * 1), 100, 100),
+     "name": "Vulnerability Discovery", "answered_correctly": False},
+    {"rect": pygame.Rect(screen_width // 3 - 50, button_y + (screen_height // 10 * 2), 100, 100), "name": "Fuzzing",
+     "answered_correctly": False},
+    {"rect": pygame.Rect(screen_width // 3 - 50, button_y + (screen_height // 10 * 3), 100, 100),
+     "name": "Penetration Testing", "answered_correctly": False},
+    {"rect": pygame.Rect(screen_width // 3 - 50, button_y + (screen_height // 10 * 4), 100, 100),
+     "name": "Ethical Hacking", "answered_correctly": False},
+    {"rect": pygame.Rect(screen_width // 1.5 - 50, button_y + (screen_height // 10 * 0), 100, 100),
+     "name": "Exploits/Attacks", "answered_correctly": False},
+    {"rect": pygame.Rect(screen_width // 1.5 - 50, button_y + (screen_height // 10 * 1), 100, 100),
+     "name": "Countermeasures", "answered_correctly": False},
+    {"rect": pygame.Rect(screen_width // 1.5 - 50, button_y + (screen_height // 10 * 2), 100, 100),
+     "name": "Internet Infrastructure", "answered_correctly": False},
+    {"rect": pygame.Rect(screen_width // 1.5 - 50, button_y + (screen_height // 10 * 3), 100, 100),
+     "name": "Forensic Analysis", "answered_correctly": False},
+    {"rect": pygame.Rect(screen_width // 1.5 - 50, button_y + (screen_height // 10 * 4), 100, 100),
+     "name": "ML for Cybersecurity", "answered_correctly": False}
 ]
 
 topic_buttons = 10 * [None]
@@ -59,7 +64,7 @@ for i in range(10):
     if i < 5:
         topic_buttons[i] = pygame.Rect(screen_width // 3 - 50, button_y + (screen_height // 10 * i), 100, 100)
     else:
-        topic_buttons[i] = pygame.Rect(screen_width // 1.5 - 50, button_y + (screen_height // 10 * (i-5)), 100, 100)
+        topic_buttons[i] = pygame.Rect(screen_width // 1.5 - 50, button_y + (screen_height // 10 * (i - 5)), 100, 100)
 
 # Load images and resize always
 background_image = pygame.image.load("background.png")
@@ -77,7 +82,8 @@ title_font = pygame.font.SysFont("Arial", int(screen_height / 14))
 subtitle_font = pygame.font.SysFont("Arial", int(screen_height / 20))
 button_font = pygame.font.SysFont("Arial", int(screen_height / 25))
 
-#=========================================================================
+
+# =========================================================================
 
 # Draw the Start Game Button
 def draw_start_game_button():
@@ -87,6 +93,7 @@ def draw_start_game_button():
     button_rect.center = (screen_width // 2, int(screen_height * (2 / 3)))
     pygame.draw.ellipse(screen, (0, 128, 255), button_rect.inflate(20, 20))
     screen.blit(button_text, button_rect)
+
 
 # Draw the title screen
 def draw_title_screen():
@@ -100,66 +107,69 @@ def draw_title_screen():
     title_rect.center = (screen_width // 2, screen_height // 2)
     screen.blit(title_text, title_rect)
     draw_start_game_button()
-    
+
+
 # Draw buttons in general
 def draw_button(text, center, color):
     button_text = button_font.render(text, True, WHITE)
     button_rect = button_text.get_rect(center=center)
-    button_rect.inflate_ip(20, 20)  # increase the size of the rect
-    pygame.draw.rect(screen, color, button_rect)  # draw a rect
+    button_rect.inflate_ip(50, 40)  # increase the size of the rect
+    pygame.draw.ellipse(screen, color, button_rect)  # draw a rect
     button_rect_center = button_rect.center
-    screen.blit(button_text, (button_rect_center[0]-button_text.get_width()//2, button_rect_center[1]-button_text.get_height()//2))    
-    
+    screen.blit(button_text, (
+    button_rect_center[0] - button_text.get_width() // 2, button_rect_center[1] - button_text.get_height() // 2))
+
+
 def draw_difficulty_screen():
     # Clear the screen
     screen.fill(BLACK)
-    
+
     # Renders and draws the title text
     screen.blit(background_image, (0, 0))
     topic_text = title_font.render("Choose a difficulty", True, WHITE)
     topic_rect = topic_text.get_rect()
-    topic_rect.center = (screen_width // 2, 50)
+    topic_rect.center = (screen_width // 2, screen_height // 4)
+
     screen.blit(topic_text, topic_rect)
 
     # Draw the buttons
     draw_button("Easy", button_rect_easy.center, GREEN)
     draw_button("Medium", button_rect_medium.center, ORANGE)
     draw_button("Hard", button_rect_hard.center, RED)
-    
+
 
 def draw_topic_screen():
     # Clear the screen
     screen.fill(BLACK)
-    
+
     # Renders and draws the title text
     screen.blit(background_image, (0, 0))
     topic_text = title_font.render("Choose a Topic", True, WHITE)
     topic_rect = topic_text.get_rect()
-    topic_rect.center = (screen_width // 2, 50)
+    topic_rect.center = (screen_width // 2, screen_height // 5)
     screen.blit(topic_text, topic_rect)
-    
+
     # Draw the buttons
     for i, topic in enumerate(topics):
-        draw_button(topic["name"], topic["rect"].center, BLUE)
+        draw_button(topic["name"], topic["rect"].center, GRAY)
 
 
 def load_questions_for_topic(selected_topic, selected_difficulty):
     with open('questions.json', 'r') as f:
         questions = json.load(f)
-        
+
     if selected_topic not in questions:
         return []
-    
-    selected_questions = [q for q in questions[selected_topic] if q['difficulty'] == selected_difficulty]
-    
-    return selected_questions
 
+    selected_questions = [q for q in questions[selected_topic] if q['difficulty'] == selected_difficulty]
+
+    return selected_questions
 
 
 def draw_question_screen(topic, difficulty):
     # Clear the screen
     screen.fill(BLACK)
-    
+
     # Renders and draws the title text
     screen.blit(background_image, (0, 0))
     topic_text = title_font.render("Question: ", True, WHITE)
@@ -172,7 +182,7 @@ def draw_question_screen(topic, difficulty):
 
     # Select a random question from the list
     random_question = random.choice(questions)
-    
+
     # Set the question text and options
     question_text = subtitle_font.render(random_question['question'], True, WHITE)
 
@@ -193,7 +203,7 @@ def draw_question_screen(topic, difficulty):
     lines.append(line)
 
     # Just set font_size so long questions don't go past screen
-    font_size = 38
+    font_size = 39
 
     # Render and blit each line of the question text to the screen
     y = max_height - (len(lines) * font_size) // 8
@@ -215,33 +225,35 @@ def draw_question_screen(topic, difficulty):
     for i, option_text in enumerate(random_question['options']):
         option_center = (screen_width // 2, option_y + (i * option_spacing))
         option_centers.append(option_center)
-    
+
     # Get the text from the question
     option_texts = random_question['options']
     correct_answer = random_question['answer']
-    
+
     # Create the rectangle button object around the text
     for i, option_text in enumerate(random_question['options']):
-        text_surface = subtitle_font.render(option_text, True, (255, 255, 255))  # render the text to create a surface
+        text_surface = button_font.render(option_text, True, (255, 255, 255))  # render the text to create a surface
         text_rect = text_surface.get_rect()  # get the rect of the text surface
         button_width = text_rect.width + 20  # add padding on either side of the text
         button_height = text_rect.height + 10  # add padding above and below the text
-        option_rect = pygame.Rect(option_centers[i][0] - button_width // 2, option_centers[i][1] - ( button_height // 2), button_width, button_height)
+        option_rect = pygame.Rect(option_centers[i][0] - button_width // 2, option_centers[i][1] - (button_height // 2),
+                                  button_width, button_height)
         option_rects.append(option_rect)
-    
+
     # Draw the actual button
     for i, option_text in enumerate(option_texts):
         draw_button(option_text, option_centers[i], BLUE)
-    
+
     # Update the display
     pygame.display.update()
 
     return option_centers, option_texts, option_rects, correct_answer
-    
+
+
 def draw_game_over_screen():
-     # Clear the screen
+    # Clear the screen
     screen.fill(BLACK)
-    
+
     # Render and draw the "Game Over" message
     screen.blit(background_image, (0, 0))
     game_over_text = title_font.render("GAME OVER", True, RED)
@@ -261,14 +273,14 @@ def draw_game_over_screen():
     # Blit the text surface onto the screen surface
     screen.blit(num_correct_text, num_correct_rect)
 
-
     # Update the display
     pygame.display.update()
-    
+
+
 def draw_victory_screen():
-     # Clear the screen
+    # Clear the screen
     screen.fill(BLACK)
-    
+
     # Render and draw the "Game Over" message
     screen.blit(background_image, (0, 0))
     game_over_text = title_font.render("YOU WON!!!", True, GREEN)
@@ -288,11 +300,11 @@ def draw_victory_screen():
     # Blit the text surface onto the screen surface
     screen.blit(num_correct_text, num_correct_rect)
 
-
     # Update the display
     pygame.display.update()
 
-#=========================================================================
+
+# =========================================================================
 # Code Responsible for running game
 # Initial draw
 
@@ -301,11 +313,11 @@ draw_title_screen()
 pygame.display.flip()
 
 # Conditions to change when playing game
-play_button_clicked = False # Checks if play button is clicked
-difficulty_button_clicked = False # Checks if difficulty button is clicked
-topic_button_clicked = False # Checks if a topic is selected
-answer_button_clicked = False # Checks if user clicks on an answer
-choice_correct = False # Checks if user clicks the correct answer
+play_button_clicked = False  # Checks if play button is clicked
+difficulty_button_clicked = False  # Checks if difficulty button is clicked
+topic_button_clicked = False  # Checks if a topic is selected
+answer_button_clicked = False  # Checks if user clicks on an answer
+choice_correct = False  # Checks if user clicks the correct answer
 
 while True:
     for event in pygame.event.get():
@@ -321,48 +333,48 @@ while True:
                 num_correct = 0
                 difficulty_button_clicked = False
                 topic_button_clicked = False
-                answer_button_clicked = False 
+                answer_button_clicked = False
                 difficulty = ""
                 for i, topic in enumerate(topics):
                     topic["answered_correctly"] = False
                 current_screen = "difficulty"
-                
+
         # Checks if player will continue playing or go to gameover screen from the qustion screen
         elif current_screen == "question":
-            if event.type == pygame.MOUSEBUTTONDOWN and topic_button_clicked==True:
+            if event.type == pygame.MOUSEBUTTONDOWN and topic_button_clicked == True:
                 for i, option_rect in enumerate(option_rects):
                     if option_rects[i].collidepoint(event.pos):
                         answer_button_clicked = True
-                        if option_texts[i] != correct_answer: # Logic if wrong answer was chosen
-                            current_screen = "game_over"  
-                            print(f"Clicked wrong option {i+1}")
-                        else: # Logic if correct answer is chosen
+                        if option_texts[i] != correct_answer:  # Logic if wrong answer was chosen
+                            current_screen = "game_over"
+                            print(f"Clicked wrong option {i + 1}")
+                        else:  # Logic if correct answer is chosen
                             current_screen = "topic"
                             num_correct += 1
                             for j, topic_button in enumerate(topics):
                                 if topic_button["name"] == selected_topic:
                                     topic_button["answered_correctly"] = True
-                            print(f"Clicked correct option {i+1}")
+                            print(f"Clicked correct option {i + 1}")
 
-                              
-                    
+
+
         # Checks which topic is chosen and generates a random question from topic and difficulty
         elif current_screen == "topic":
             answer_button_clicked = False
-            if event.type == pygame.MOUSEBUTTONDOWN and difficulty_button_clicked==True:
+            if event.type == pygame.MOUSEBUTTONDOWN and difficulty_button_clicked == True:
                 for i, topic_button in enumerate(topics):
                     if topic_button["answered_correctly"] == False and topic_button["rect"].collidepoint(event.pos):
                         topic_button_clicked = True
                         selected_topic = topic_button["name"]
                         current_screen = "question"
-            for i, topic_button in enumerate(topics):        
+            for i, topic_button in enumerate(topics):
                 if num_correct == len(topics):
-                        current_screen = "victory"
+                    current_screen = "victory"
 
-                
+
         # Checks which difficulty the player chooses
         elif current_screen == "difficulty":
-            if event.type == pygame.MOUSEBUTTONDOWN  and play_button_clicked == True:
+            if event.type == pygame.MOUSEBUTTONDOWN and play_button_clicked == True:
                 if button_rect_easy.collidepoint(event.pos):
                     difficulty_button_clicked = True
                     difficulty = "easy"
@@ -379,7 +391,6 @@ while True:
                 play_button_clicked = True
                 current_screen = "difficulty"
                 break
-            
 
     # Conditions to check which screen the game is on
     if current_screen == "topic":
