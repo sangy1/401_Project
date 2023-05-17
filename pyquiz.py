@@ -9,7 +9,7 @@ pygame.init()
 screen_width = 1200
 screen_height = 900
 screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption("Are You Smarter Than a Cyberesecurity Student?")
+pygame.display.set_caption("Are You Smarter Than a Cybersecurity Student?")
 
 # Colors
 WHITE = (255, 255, 255)
