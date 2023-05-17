@@ -102,7 +102,7 @@ def draw_title_screen():
     # Set up screen and draw it
     screen.blit(background_image, (0, 0))
     screen.blit(logo_image, (logo_image_x, logo_image_y))
-    title_text = title_font.render("Are You Smarter Than a Cyberesecurity Student?", True, (255, 255, 255))
+    title_text = title_font.render("Are You Smarter Than a Cybersecurity Student?", True, (255, 255, 255))
     title_rect = title_text.get_rect()
     title_rect.center = (screen_width // 2, screen_height // 2)
     screen.blit(title_text, title_rect)
